@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'application#root'
 
   resources :investors
+  resources :investments
 end

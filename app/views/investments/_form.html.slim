@@ -1,0 +1,10 @@
+= simple_form_for(@investment) do |f|
+  = f.input :name, wrapper: :horizontal_form
+  = f.input :address, wrapper: :horizontal_form
+  = f.input :city, wrapper: :horizontal_form
+  = f.input :country, wrapper: :horizontal_form, selected: @investment.country.present? ? country_code_from_name(@investment.country) : nil
+  = f.input :min_invest_amount, wrapper: :horizontal_form
+  = f.input :max_invest_amount, wrapper: :horizontal_form
+  = f.input :max_total_invest_amount, wrapper: :horizontal_form
+  = f.input :marked, wrapper: :horizontal_form
+  = f.button :submit, class: 'btn btn-primary margin-bottom'

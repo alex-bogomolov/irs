@@ -1,28 +1,3 @@
-/= form_with(model: investor, local: true) do |form|
-/  - if investor.errors.any?
-/    #error_explanation
-/      h2
-/        = pluralize(investor.errors.count, "error")
-/        | prohibited this investor from being saved:
-/      ul
-/        - investor.errors.full_messages.each do |message|
-/          li= message
-/  .field
-/    = form.label :first_name
-/    = form.text_field :first_name, id: :investor_first_name
-/  .field
-/    = form.label :last_name
-/    = form.text_field :last_name, id: :investor_last_name
-/  .field
-/    = form.label :email
-/    = form.text_field :email, id: :investor_email
-/  .field
-/    = form.label :city
-/    = form.text_field :city, id: :investor_city
-/  .actions
-/    = form.submit
-
-
 = simple_form_for @investor do |f|
   = f.input :first_name, wrapper: :horizontal_form
   = f.input :last_name, wrapper: :horizontal_form

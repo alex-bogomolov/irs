@@ -1,0 +1,30 @@
+h1 Investments
+table.table
+  thead
+    tr
+      th Name
+      th Address
+      th Worth
+      th City
+      th Country
+      th Min invest amount
+      th Max invest amount
+      th Max total invest amount
+      th Marked
+      th colspan="3"
+  tbody
+    - @investments.each do |investment|
+      tr
+        td= investment.name
+        td= investment.address
+        td= investment.worth
+        td= investment.city
+        td= investment.country
+        td= investment.min_invest_amount
+        td= investment.max_invest_amount
+        td= investment.max_total_invest_amount
+        td= investment.marked
+        td= link_to 'Show', investment
+        td= link_to 'Edit', edit_investment_path(investment)
+        td= link_to 'Destroy', investment, method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'New Investment', new_investment_path, class: 'btn btn-primary'

@@ -1,0 +1,47 @@
+<p>
+  <strong>Name:</strong>
+  <%= @investment.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @investment.address %>
+</p>
+
+<p>
+  <strong>Worth:</strong>
+  <%= @investment.worth %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @investment.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @investment.country %>
+</p>
+
+<p>
+  <strong>Min invest amount:</strong>
+  <%= @investment.min_invest_amount %>
+</p>
+
+<p>
+  <strong>Max invest amount:</strong>
+  <%= @investment.max_invest_amount %>
+</p>
+
+<p>
+  <strong>Max total invest amount:</strong>
+  <%= @investment.max_total_invest_amount %>
+</p>
+
+<p>
+  <strong>Marked:</strong>
+  <%= @investment.marked %>
+</p>
+
+<%= link_to 'Edit', edit_investment_path(@investment) %> |
+<%= link_to 'Back', investments_path %>

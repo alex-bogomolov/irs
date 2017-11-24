@@ -12,6 +12,8 @@ gem 'activerecord-oracle_enhanced-adapter', '~> 1.8.0'
 gem 'ruby-oci8'
 gem 'slim'
 gem 'simple_form'
+gem 'country_select'
+gem 'countries'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
