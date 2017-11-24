@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "city", limit: 30, null: false
     t.string "country", limit: 30, null: false
     t.integer "min_invest_amount", limit: 9, precision: 9, null: false
-    t.integer "max_invest_amount", limit: 6, precision: 6, null: false
+    t.integer "max_invest_amount", limit: 9, precision: 9, null: false
     t.integer "max_total_invest_amount", limit: 9, precision: 9, null: false
-    t.boolean "marked", default: false, null: false
+    t.boolean "marked", null: false
   end
 
   create_table "investors", force: :cascade do |t|
