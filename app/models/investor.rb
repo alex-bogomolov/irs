@@ -4,5 +4,9 @@ class Investor < ActiveRecord::Base
       'investor_sequence'
     end
   end
-  validates :email, uniqueness: true
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, uniqueness: true, presence: true
+  validates :city, presence: true
 end

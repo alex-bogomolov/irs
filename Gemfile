@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'activerecord-oracle_enhanced-adapter', '~> 1.8.0'
 gem 'ruby-oci8'
+gem 'slim'
+gem 'simple_form'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -40,7 +42,13 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'pry-rails'
+  gem 'database_cleaner'
+  gem 'simplecov'
+  gem 'poltergeist'
 end
 
 group :development do
