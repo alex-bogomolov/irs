@@ -9,4 +9,8 @@ class Investor < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, uniqueness: true, presence: true
   validates :city, presence: true
+
+  def full_name
+    "#{last_name}, #{first_name}"
+  end
 end

@@ -1,0 +1,6 @@
+= simple_form_for(@investment_data) do |f|
+  = f.association :investor, wrapper: :horizontal_form, label_method: :full_name, value_method: :id
+  = f.association :investment, wrapper: :horizontal_form, label_method: :name, value_method: :id
+  = f.input :investment_date, wrapper: :horizontal_form
+  = f.input :invest_amount, wrapper: :horizontal_form
+  = f.button :submit, class: 'btn btn-primary margin-bottom'

@@ -1,0 +1,13 @@
+p
+  strong Investor:
+  =< @investment_data.investor.full_name
+p
+  strong Investment:
+  =< @investment_data.investment.name
+p
+  strong Investment date:
+  =< @investment_data.investment_date.strftime('%-d %b %Y')
+p
+  strong Invest amount:
+  =< number_to_currency(@investment_data.invest_amount)
+= "#{link_to 'Edit', edit_investment_data_path(@investment_data)} | #{link_to 'Back', investment_data_index_path}".html_safe

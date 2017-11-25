@@ -17,12 +17,12 @@ table.table
       tr
         td= investment.name
         td= investment.address
-        td= investment.worth
+        td= number_to_currency investment.worth
         td= investment.city
         td= investment.country
-        td= investment.min_invest_amount
-        td= investment.max_invest_amount
-        td= investment.max_total_invest_amount
+        td= number_to_currency investment.min_invest_amount
+        td= number_to_currency investment.max_invest_amount
+        td= number_to_currency investment.max_total_invest_amount
         td= investment.marked
         td= link_to 'Show', investment
         td= link_to 'Edit', edit_investment_path(investment)

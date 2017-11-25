@@ -13,4 +13,7 @@ class InvestmentData < ActiveRecord::Base
   validates :investment_id, presence: true
   validates :investment_date, presence: true
   validates :invest_amount, presence: true
+
+  belongs_to :investor
+  belongs_to :investment
 end

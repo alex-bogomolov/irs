@@ -1,0 +1,5 @@
+h1 Editing Investment Data
+.row
+  .col-sm-8
+    = render 'form', investment_data: @investment_data
+    = "#{link_to 'Show', @investment_data} | #{link_to 'Back', investment_data_index_path}".html_safe

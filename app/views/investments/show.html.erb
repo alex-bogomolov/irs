@@ -10,7 +10,7 @@
 
 <p>
   <strong>Worth:</strong>
-  <%= @investment.worth %>
+  <%= number_to_currency(@investment.worth) %>
 </p>
 
 <p>
@@ -25,17 +25,17 @@
 
 <p>
   <strong>Min invest amount:</strong>
-  <%= @investment.min_invest_amount %>
+  <%= number_to_currency(@investment.min_invest_amount) %>
 </p>
 
 <p>
   <strong>Max invest amount:</strong>
-  <%= @investment.max_invest_amount %>
+  <%= number_to_currency(@investment.max_invest_amount) %>
 </p>
 
 <p>
   <strong>Max total invest amount:</strong>
-  <%= @investment.max_total_invest_amount %>
+  <%= number_to_currency(@investment.max_total_invest_amount) %>
 </p>
 
 <p>

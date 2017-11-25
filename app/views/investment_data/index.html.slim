@@ -1,0 +1,21 @@
+h1 Investment Data
+table.table
+  thead
+    tr
+      th Investor
+      th Investment
+      th Investment date
+      th Invest amount
+      th colspan="3" 
+  tbody
+    - @investment_data.each do |investment_data|
+      tr
+        td= link_to "#{investment_data.investor.full_name}", investment_data.investor
+        td= link_to investment_data.investment.name, investment_data.investment
+        td= investment_data.investment_date.strftime('%-d %b %Y')
+        td= number_to_currency(investment_data.invest_amount)
+        td= link_to 'Show', investment_data
+        td= link_to 'Edit', edit_investment_data_path(investment_data)
+        td= link_to 'Destroy', investment_data, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Investment Data', new_investment_data_path, class: 'btn btn-primary margin-bottom'

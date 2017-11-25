@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :investors
   resources :investments
+  resources :investment_data
 end

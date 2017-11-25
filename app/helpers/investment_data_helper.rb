@@ -1,0 +1,2 @@
+module InvestmentDataHelper
+end

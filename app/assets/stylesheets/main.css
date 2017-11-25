@@ -15,6 +15,11 @@
     font-size: .9rem;
 }
 
+select {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
+
 html {
     font-size: 14px;
 }
