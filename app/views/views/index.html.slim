@@ -1,0 +1,36 @@
+h1 Views
+h3 Investment Summary
+table.table
+  tr
+    th ID
+    th Name
+    th Total
+  - @cursors[:investment_summary].fetch do |row|
+    tr
+      td = row[0]
+      td = row[1]
+      td = number_to_currency(row[2])
+h3 Investments In Current Year
+table.table
+  tr
+    th First Name
+    th Last Name
+    th Investment
+    th Invest Amount
+    th Date
+  - @cursors[:investments_in_current_year].fetch do |row|
+    tr
+      td = row[0]
+      td = row[1]
+      td = row[2]
+      td = number_to_currency row[3]
+      td = row[4].strftime('%-d %b %Y')
+h3 Investors By City
+table.table
+  tr
+    th City
+    th Number of Investors
+  - @cursors[:investors_by_city].fetch do |row|
+    tr
+      td = row[0]
+      td = row[1].to_i
