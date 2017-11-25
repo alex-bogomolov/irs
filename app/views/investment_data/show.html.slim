@@ -6,7 +6,7 @@ p
   =< @investment_data.investment.name
 p
   strong Investment date:
-  =< @investment_data.investment_date.strftime('%-d %b %Y')
+  =< @investment_data.formatted_investment_date
 p
   strong Invest amount:
   =< number_to_currency(@investment_data.invest_amount)

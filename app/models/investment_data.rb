@@ -16,4 +16,8 @@ class InvestmentData < ActiveRecord::Base
 
   belongs_to :investor
   belongs_to :investment
+
+  def formatted_investment_date
+    investment_date.strftime('%-d %b %Y')
+  end
 end

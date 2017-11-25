@@ -19,23 +19,33 @@ class InvestmentDataController < ApplicationController
     @investment_data = InvestmentData.new(investment_data_params)
 
     if @investment_data.save
-      redirect_to @investment_data, notice: 'Investment datum was successfully created.'
+      redirect_to @investment_data, notice: 'Investment data was successfully created.'
     else
       render :new
     end
+
+  rescue ActiveRecord::StatementInvalid => e
+    @message = e.message
+    render :new
   end
 
   def update
     if @investment_data.update(investment_data_params)
-      redirect_to @investment_data, notice: 'Investment datum was successfully updated.'
+      redirect_to @investment_data, notice: 'Investment data was successfully updated.'
     else
       render :edit
     end
+  rescue ActiveRecord::StatementInvalid => e
+    @message = e.message
+    render :edit
   end
 
   def destroy
     @investment_data.destroy
-    redirect_to investment_data_index_url, notice: 'Investment datum was successfully destroyed.'
+    redirect_to investment_data_index_url, notice: 'Investment data was successfully destroyed.'
+  rescue ActiveRecord::StatementInvalid => e
+    flash.alert = e.message
+    redirect_to investment_data_index_url
   end
 
   private

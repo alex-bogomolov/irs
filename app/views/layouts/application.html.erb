@@ -17,9 +17,9 @@
           <%= notice %>
         </div>
       <% end %>
-      <% if @message %>
+      <% if @message || flash.alert %>
           <div class="alert alert-danger alert-section">
-            <%= @message %>
+            <%= @message || flash.alert %>
           </div>
       <% end %>
       <%= yield %>
