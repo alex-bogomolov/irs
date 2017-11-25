@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :investment_data
 
   get '/views' => 'views#index'
+  get '/functions' => 'functions#index'
 end

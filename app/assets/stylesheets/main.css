@@ -27,3 +27,23 @@ html {
 h1 {
     margin-top: .5rem;
 }
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.monospaced {
+    font-family: monospace;
+}
+
+.whitespace {
+    white-space: pre;
+}
+
+.radio label {
+    margin-left:.5rem;
+}
+
+.radio label input {
+    margin-right: .25rem;
+}
