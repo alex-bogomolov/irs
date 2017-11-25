@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'investors', type: :feature do
   before :each do
-    FactoryBot.reload
-    create_list(:investor, 5)
+    seed_test_database
   end
 
   describe 'index' do
@@ -88,7 +87,7 @@ RSpec.describe 'investors', type: :feature do
     it 'deletes investor', js: true do
       visit '/investors'
 
-      find(:xpath, '//*[text() = "Rodolfo"]/..//a[text() = "Destroy"]').click
+      expect{find(:xpath, '//*[text() = "Rodolfo"]/..//a[text() = "Destroy"]').click}.to change{InvestmentData.count}.by(-3)
 
       expect(page).to have_content('Investor was successfully destroyed.')
     end
