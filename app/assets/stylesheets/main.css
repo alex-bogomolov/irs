@@ -14,3 +14,11 @@
     margin-top: .75rem;
     font-size: .9rem;
 }
+
+html {
+    font-size: 14px;
+}
+
+h1 {
+    margin-top: .5rem;
+}
