@@ -31,6 +31,9 @@ class InvestmentsController < ApplicationController
     else
       render :edit
     end
+  rescue ActiveRecord::StatementInvalid => e
+    @message = e.message
+    render :edit
   end
 
   def destroy

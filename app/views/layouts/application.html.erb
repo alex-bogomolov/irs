@@ -17,6 +17,11 @@
           <%= notice %>
         </div>
       <% end %>
+      <% if @message %>
+          <div class="alert alert-danger alert-section">
+            <%= @message %>
+          </div>
+      <% end %>
       <%= yield %>
     </main>
   </body>

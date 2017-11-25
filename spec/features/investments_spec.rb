@@ -96,10 +96,37 @@ RSpec.describe 'investments', type: :feature do
 
       expect(page).to have_content("can't be blank")
     end
+
+    it 'shows error' do
+      visit '/investments'
+
+      find(:xpath, '(//a[text()="Edit"])[2]').click
+
+      expect(page).to have_content('Editing Investment')
+      fill_in('Min invest amount', with: 50_000)
+
+      click_on 'Update Investment'
+
+      expect(page).to have_content('OCIError: ORA-20008: Total invest amount for investment')
+    end
+
+    it 'also shows error' do
+      visit '/investments'
+
+      find(:xpath, '(//a[text()="Edit"])[3]').click
+
+      expect(page).to have_content('Editing Investment')
+      fill_in('Max total invest amount', with: 90_000)
+
+      click_on 'Update Investment'
+
+      expect(page).to have_content('MAX_TOTAL_INVEST_AMOUNT')
+      expect(page).to have_content('CAN NOT BE LESS THAN')
+    end
   end
 
-  describe 'delete' do
-    it 'deletes investments', js: true do
+  describe 'delete', js: true do
+    it 'deletes investments' do
       visit '/investments'
 
 
