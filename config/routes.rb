@@ -9,4 +9,9 @@ Rails.application.routes.draw do
 
   get '/views' => 'views#index'
   get '/functions' => 'functions#index'
+
+  namespace :functions do
+    get :align
+    get :show_investors
+  end
 end

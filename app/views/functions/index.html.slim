@@ -2,19 +2,19 @@ h1 Functions
 h3 Align
 .row
   .col-sm-3
-    = simple_form_for :align_params, url: functions_path, method: :get do |f|
+    = simple_form_for :align_params, url: functions_align_path, method: :get, remote: true do |f|
       = f.input :size, as: :integer, wrapper: :horizontal_form, input_html: { min: 1, max: 30, value: params.dig(:align_params, :size) }
       = f.input :direction, as: :radio_buttons, collection: %w(left right center), checked: params.dig(:align_params, :direction)
       = f.button :submit, class: 'btn btn-primary margin-bottom'
-- if @cursors[:align]
-  .monospaced
-    - @cursors[:align].fetch do |row|
-      p.no-margin-bottom.whitespace = row[0]
+.monospaced#align
 h3 Most Wealthy Investors
 .monospaced
-  - @cursors[:most_wealthy_investors].fetch do |row|
+  - @cursor.fetch do |row|
     p.no-margin-bottom.whitespace = row[0]
 h3 Show Investors
-.monospaced
-  - @cursors[:show_investors].fetch do |row|
-    p.no-margin-bottom.whitespace = row[0]
+.row
+  .col-sm-6
+    = simple_form_for :show_investors_params, url: functions_show_investors_path, method: :get, remote: true do |f|
+      = f.input :investment_id, collection: Investment.all, label_method: :name, value_method: :id, wrapper: :horizontal_form
+      = f.button :submit, class: 'btn btn-primary margin-bottom'
+.monospaced#show_investors

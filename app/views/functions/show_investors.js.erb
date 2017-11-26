@@ -1,0 +1,9 @@
+<% if validate_show_investors_params %>
+  var container = $('#show_investors');
+  container.html('');
+  <% @cursor.fetch do |row| %>
+    container.append('<p class="no-margin-bottom whitespace"><%= j row[0] %></p>');
+  <% end %>
+<% else %>
+  alert('Invalid params');
+<% end %>
