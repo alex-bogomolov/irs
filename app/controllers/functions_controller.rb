@@ -78,6 +78,7 @@ class FunctionsController < ApplicationController
     params.dig(:scale_invest_amounts_params, :investment_id).present? &&
         params.dig(:scale_invest_amounts_params, :percent).present? &&
         params.dig(:scale_invest_amounts_params, :investment_id)[/^\d+$/] &&
-        params.dig(:scale_invest_amounts_params, :percent)[/^\d+.?\d?\d?$/]
+        params.dig(:scale_invest_amounts_params, :percent).to_f > 0 &&
+        params.dig(:scale_invest_amounts_params, :percent).to_f < 100
   end
 end
