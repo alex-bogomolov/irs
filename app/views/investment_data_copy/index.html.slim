@@ -1,0 +1,16 @@
+h1 Investment Data Copy
+= link_to 'Clear', investment_data_copy_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary margin-bottom'
+table.table
+  thead
+    tr
+      th Investor ID
+      th Investment ID
+      th Investment Date
+      th Invest Amount
+  tbody
+    - @investment_data_copy.each do |investment_data_copy|
+      tr
+        td= investment_data_copy.investor_id
+        td= investment_data_copy.investment_id
+        td= investment_data_copy.investment_date.strftime '%-d %b %Y'
+        td= number_to_currency(investment_data_copy.invest_amount)

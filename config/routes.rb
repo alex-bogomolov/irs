@@ -17,4 +17,7 @@ Rails.application.routes.draw do
     post :recalculate_worth
     post :scale_invest_amounts
   end
+
+  get '/investment_data_copy' => 'investment_data_copy#index'
+  delete '/investment_data_copy' => 'investment_data_copy#destroy'
 end

@@ -67,4 +67,11 @@ FactoryBot.define do
     investment_date { generate(:date) }
     invest_amount 50_000
   end
+
+  factory :investment_data_copy do
+    investor_id 1
+    investment_id 1
+    investment_date '2017-01-01'
+    invest_amount 50_000
+  end
 end

@@ -12,13 +12,22 @@ module Helpers
     Investor.transaction do
       investors = create_list(:investor, 5)
       investments = create_list(:investment, 3)
+      investment_data = []
 
       investments.each_with_index do |investment, i|
         investors.each_with_index do |investor, j|
-          create(:investment_data, investor_id: investor.id,
-                 investment_id: investment.id,
-                 invest_amount: invest_amounts[i][j])
+          investment_data << create(:investment_data, investor_id: investor.id,
+                                                      investment_id: investment.id,
+                                                      invest_amount: invest_amounts[i][j])
         end
+      end
+
+      investment_data.each_with_index do |id, i|
+        next unless i % 4 == 0
+        create(:investment_data_copy, investor_id: id.id,
+                                      investment_id: id.id,
+                                      investment_date: id.investment_date,
+                                      invest_amount: id.invest_amount)
       end
     end
   end
