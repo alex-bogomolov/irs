@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   namespace :functions do
     get :align
     get :show_investors
+    post :decrease_invest_amount
+    post :recalculate_worth
+    post :scale_invest_amounts
   end
 end
