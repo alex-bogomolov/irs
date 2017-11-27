@@ -7,7 +7,7 @@
         = simple_form_for :align_params, url: functions_align_path, method: :get, remote: true do |f|
           = f.input :size, as: :integer, wrapper: :horizontal_form, input_html: { min: 1, max: 30, value: params.dig(:align_params, :size) }
           = f.input :direction, as: :radio_buttons, collection: %w(left right center), checked: params.dig(:align_params, :direction)
-          = f.button :submit, class: 'btn btn-primary margin-bottom'
+          = f.button :submit, 'Align', class: 'btn btn-primary margin-bottom'
     .monospaced#align
     h3 Most Wealthy Investors
     .monospaced
@@ -16,7 +16,7 @@
     h3 Show Investors
     = simple_form_for :show_investors_params, url: functions_show_investors_path, method: :get, remote: true do |f|
       = f.input :investment_id, collection: Investment.all, label_method: :name, value_method: :id, wrapper: :horizontal_form
-      = f.button :submit, class: 'btn btn-primary margin-bottom'
+      = f.button :submit, 'Show Investors', class: 'btn btn-primary margin-bottom'
     .monospaced#show_investors
   .col-sm-6
     h1 Procedures
@@ -24,11 +24,11 @@
     = simple_form_for :decrease_invest_amount_params, url: functions_decrease_invest_amount_path do |f|
       = f.input :investment_id, collection: Investment.all, label_method: :name, value_method: :id, wrapper: :horizontal_form, selected: params.dig(:decrease_invest_amount_params, :investment_id)
       = f.input :size, as: :integer, wrapper: :horizontal_form, input_html: {min: 10000, step: 1000, value: params.dig(:decrease_invest_amount_params, :size)}
-      = f.button :submit, class: 'btn btn-primary margin-bottom'
+      = f.button :submit, 'Decrease Invest Amount', class: 'btn btn-primary margin-bottom'
     h3 Recalculate Worth
     = link_to 'Recalculate Worth', functions_recalculate_worth_path, class: 'btn btn-primary', method: :post
     h3 Scale Invest Amounts
     = simple_form_for :scale_invest_amounts_params, url: functions_scale_invest_amounts_path do |f|
       = f.input :investment_id, collection: Investment.all, label_method: :name, value_method: :id, wrapper: :horizontal_form, selected: params.dig(:scale_invest_amounts_params, :investment_id)
       = f.input :percent, as: :float, wrapper: :horizontal_form, input_html: {min: 10, step: 1, max:100, value: params.dig(:scale_invest_amounts_params, :percent)}
-      = f.button :submit, class: 'btn btn-primary margin-bottom'
+      = f.button :submit, 'Scale Invest Amounts', class: 'btn btn-primary margin-bottom'

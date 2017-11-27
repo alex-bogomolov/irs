@@ -1,0 +1,29 @@
+h1 Investment
+p
+  strong Name:
+  =< @investment.name
+p
+  strong Address:
+  =< @investment.address
+p
+  strong Worth:
+  =< number_to_currency(@investment.worth)
+p
+  strong City:
+  =< @investment.city
+p
+  strong Country:
+  =< @investment.country
+p
+  strong Min invest amount:
+  =< number_to_currency(@investment.min_invest_amount)
+p
+  strong Max invest amount:
+  =< number_to_currency(@investment.max_invest_amount)
+p
+  strong Max total invest amount:
+  =< number_to_currency(@investment.max_total_invest_amount)
+p
+  strong Marked:
+  =< @investment.marked
+= "#{link_to 'Edit', edit_investment_path(@investment)} | #{link_to 'Back', investments_path}".html_safe

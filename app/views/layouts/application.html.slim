@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Irs
+    = csrf_meta_tags
+    meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" /
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render 'shared/navbar'
+    main.container role="main" 
+      - if notice
+        .alert.alert-success.alert-section
+          = notice
+      - if @message || flash.alert
+        .alert.alert-danger.alert-section
+          = @message || flash.alert
+      = yield

@@ -12,7 +12,7 @@ RSpec.describe 'functions and procedures', type: :feature do
       find(:xpath, '//form[contains(@class, "align_params")]//input[@type="number"]').set(17)
       find(:xpath, '(//input[@type="radio"])[2]').click
 
-      click_on 'Save Align params'
+      click_on 'Align'
 
       expect(page).to have_content('   Brandynchester')
       expect(page).to have_content('Lake Johathanstad')
@@ -26,7 +26,7 @@ RSpec.describe 'functions and procedures', type: :feature do
 
       find(:xpath, '//form[contains(@class,"show_investors_params")]//option[2]').select_option
 
-      click_on 'Save Show investors params'
+      click_on 'Show Investors'
 
       expect(page).to have_content 'Elsie Grant, Rachel Wiegand, Eva Graham, Rodolfo White, Bernice Beatty'
     end
@@ -39,7 +39,7 @@ RSpec.describe 'functions and procedures', type: :feature do
 
         find(:xpath, '//form[contains(@class,"decrease_invest_amount_params")]//option[2]').select_option
         find(:xpath, '//form[contains(@class,"decrease_invest_amount_params")]//input[@type="number"]').set(5_000)
-        click_on 'Save Decrease invest amount params'
+        click_on 'Decrease Invest Amount'
         expect(page).to have_content 'Procedure IRS.DECREASE_INVEST_AMOUNT was successfully completed.'
       end
 
@@ -47,7 +47,7 @@ RSpec.describe 'functions and procedures', type: :feature do
         visit '/functions'
 
         find(:xpath, '//form[contains(@class,"decrease_invest_amount_params")]//option[2]').select_option
-        click_on 'Save Decrease invest amount params'
+        click_on 'Decrease Invest Amount'
         expect(page).to have_content 'IRS.DECREASE_INVEST_AMOUNT: invalid params'
       end
 
@@ -56,7 +56,7 @@ RSpec.describe 'functions and procedures', type: :feature do
 
         find(:xpath, '//form[contains(@class,"decrease_invest_amount_params")]//option[2]').select_option
         find(:xpath, '//form[contains(@class,"decrease_invest_amount_params")]//input[@type="number"]').set(55)
-        click_on 'Save Decrease invest amount params'
+        click_on 'Decrease Invest Amount'
 
         expect(page).to have_content 'OCIError: ORA-20003: difference must be greater than 1000'
       end
@@ -77,7 +77,7 @@ RSpec.describe 'functions and procedures', type: :feature do
 
         find(:xpath, '//form[contains(@class,"scale_invest_amounts_params")]//option[2]').select_option
         find(:xpath, '//form[contains(@class,"scale_invest_amounts_params")]//input[@type="number"]').set(50)
-        click_on 'Save Scale invest amounts params'
+        click_on 'Scale Invest Amounts'
         expect(page).to have_content 'Procedure IRS.SCALE_INVEST_AMOUNTS was successfully completed.'
       end
 
@@ -85,7 +85,7 @@ RSpec.describe 'functions and procedures', type: :feature do
         visit '/functions'
 
         find(:xpath, '//form[contains(@class,"scale_invest_amounts_params")]//option[2]').select_option
-        click_on 'Save Scale invest amounts params'
+        click_on 'Scale Invest Amounts'
         expect(page).to have_content 'IRS.SCALE_INVEST_AMOUNTS: invalid params'
       end
     end

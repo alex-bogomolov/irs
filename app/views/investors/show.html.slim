@@ -1,0 +1,14 @@
+h1 Investor
+p
+  strong First name:
+  =< @investor.first_name
+p
+  strong Last name:
+  =< @investor.last_name
+p
+  strong Email:
+  =< @investor.email
+p
+  strong City:
+  =< @investor.city
+= "#{link_to 'Edit', edit_investor_path(@investor)} | #{link_to 'Back', investors_path}".html_safe

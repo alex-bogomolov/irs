@@ -1,9 +1,10 @@
+h1 Investment Data
 p
   strong Investor:
-  =< @investment_data.investor.full_name
+  =< link_to @investment_data.investor.full_name, @investment_data.investor
 p
   strong Investment:
-  =< @investment_data.investment.name
+  =< link_to @investment_data.investment.name, @investment_data.investment
 p
   strong Investment date:
   =< @investment_data.formatted_investment_date
